@@ -28,7 +28,7 @@ import { departmentModule } from './modules/department/department.module';
       database: 'dedt789mdesu7o',
       entities: ['dist/entities/*.entity.js'],
       synchronize: true,
-      ssl: true
+      ssl: { rejectUnauthorized: false }
     }),
     ProductModule,
     typeProductModule,
