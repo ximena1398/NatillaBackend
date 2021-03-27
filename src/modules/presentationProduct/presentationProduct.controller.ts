@@ -27,7 +27,7 @@ export class presentationProductController {
   }
 
   @Delete('/:id')
-  async deleteComic(@Param('id') id: Number) {
+  async deleteComic(@Param('id') id: number) {
     return await this.presentationProductService.deleteComic(id)
   }
 }
