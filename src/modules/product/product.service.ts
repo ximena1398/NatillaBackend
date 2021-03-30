@@ -13,7 +13,7 @@ export class ProductService {
 
   async getAllComic() {
     return await this.ProductRepository.createQueryBuilder("product")
-    .innerJoinAndSelect("product.presentationProduct","presentation.Product").
+    .innerJoinAndSelect("product.presentationProduct","presentation.Product").getMany();
   }
 
   async getComicId(id) {
