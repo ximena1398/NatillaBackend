@@ -8,26 +8,26 @@ export class ProductController {
 
   @Get('/all')
   async getAllComic() {
-    return await this.ProductService.getAllComic()
+    return await this.ProductService.getAll()
   }
 
   @Get('/id/:id')
   async getComicId(@Param('id') id: Number) {
-    return await this.ProductService.getComicId(id)
+    return await this.ProductService.getById(id)
   }
 
   @Post()
   async createComic(@Body() body) {
-    return await this.ProductService.createComic(body)
+    return await this.ProductService.create(body)
   }
 
   @Put('/:id')
   async updateComic(@Param('id') id: Number) {
-    return await this.ProductService.updateComic(id)
+    return await this.ProductService.update(id)
   }
 
   @Delete('/:id')
   async deleteComic(@Param('id') id: number) {
-    return await this.ProductService.deleteComic(id)
+    return await this.ProductService.delete(id)
   }
 }

@@ -11,24 +11,25 @@ export class ProductService {
   ) { }
   
 
-  async getAllComic() {
+  async getAll() {
     return await this.ProductRepository.createQueryBuilder("product")
-    .innerJoinAndSelect("product.presentationProduct","presentation.Product").getMany();
+    .innerJoinAndSelect("product.presentationProduct","presentation")
+    .innerJoinAndSelect("presentation.presentationUnity","unity").getMany();
   }
 
-  async getComicId(id) {
+  async getById(id) {
     return await this.ProductRepository.findOne(id)
   }
 
-  async createComic(body) {
+  async create(body) {
     return await this.ProductRepository.save(body)
   }
 
-  async updateComic(id: Number) {
+  async update(id: Number) {
     /* return await this.ProductRepository.update(id, body) */
   }
 
-  async deleteComic(id: number) {
+  async delete(id: number) {
     return await this.ProductRepository.delete(id)
   }
 }
