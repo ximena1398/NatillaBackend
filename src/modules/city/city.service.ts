@@ -10,23 +10,23 @@ export class cityService {
     @InjectRepository(city) private readonly cityRepository: Repository<city>
   ) { }
 
-  async getAllComic() {
+  async getAll() {
     return await this.cityRepository.find()
   }
 
-  async getComicId(id) {
+  async getById(id) {
     return await this.cityRepository.findOne(id)
   }
 
-  async createComic(body) {
+  async create(body) {
     return await this.cityRepository.save(body)
   }
 
-  async updateComic(id: Number) {
+  async update(id: Number) {
     return "actualizado correctamente " + id
   }
 
-  async deleteComic(id: Number) {
-    return "eliminado correctamente " + id
+  async delete(id: number) {
+    return await this.cityRepository.delete(id)
   }
 }

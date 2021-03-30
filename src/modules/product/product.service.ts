@@ -9,9 +9,11 @@ export class ProductService {
   constructor(
     @InjectRepository(Product) private readonly ProductRepository: Repository<Product>
   ) { }
+  
 
   async getAllComic() {
-    return await this.ProductRepository.find()
+    return await this.ProductRepository.createQueryBuilder("product")
+    .innerJoinAndSelect("product.presentationProduct","presentation.Product").
   }
 
   async getComicId(id) {
@@ -23,10 +25,10 @@ export class ProductService {
   }
 
   async updateComic(id: Number) {
-    return "actualizado correctamente " + id
+    /* return await this.ProductRepository.update(id, body) */
   }
 
-  async deleteComic(id: Number) {
-    return "eliminado correctamente " + id
+  async deleteComic(id: number) {
+    return await this.ProductRepository.delete(id)
   }
 }

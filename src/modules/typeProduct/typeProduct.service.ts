@@ -26,7 +26,7 @@ export class typeProductService {
     return "actualizado correctamente " + id
   }
 
-  async deleteComic(id: Number) {
-    return "eliminado correctamente " + id
+  async deleteComic(id: number) {
+    return await this.typeProductRepository.delete(id)
   }
 }

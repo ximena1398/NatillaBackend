@@ -10,23 +10,23 @@ export class departmentService {
     @InjectRepository(department) private readonly departmentRepository: Repository<department>
   ) { }
 
-  async getAllComic() {
+  async getAll() {
     return await this.departmentRepository.find()
   }
 
-  async getComicId(id) {
+  async getById(id) {
     return await this.departmentRepository.findOne(id)
   }
 
-  async createComic(body) {
+  async create(body) {
     return await this.departmentRepository.save(body)
   }
 
-  async updateComic(id: Number) {
+  async update(id: Number) {
     return "actualizado correctamente " + id
   }
 
-  async deleteComic(id: Number) {
-    return "eliminado correctamente " + id
+  async delete(id: number) {
+    return await this.departmentRepository.delete(id)
   }
 }

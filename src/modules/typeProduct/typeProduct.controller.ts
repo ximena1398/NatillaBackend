@@ -27,7 +27,7 @@ export class typeProductController {
   }
 
   @Delete('/:id')
-  async deleteComic(@Param('id') id: Number) {
+  async deleteComic(@Param('id') id: number) {
     return await this.typeProductService.deleteComic(id)
   }
 }

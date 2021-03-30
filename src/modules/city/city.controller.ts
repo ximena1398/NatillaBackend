@@ -7,27 +7,27 @@ export class cityController {
     constructor(private readonly cityService: cityService) { }
   
     @Get('/all')
-  async getAllComic() {
-    return await this.cityService.getAllComic()
+  async getAll() {
+    return await this.cityService.getAll()
   }
 
-  @Get('/id/:id')
-  async getComicId(@Param('id') id: Number) {
-    return await this.cityService.getComicId(id)
+  @Get(':id')
+  async getById(@Param('id') id: Number) {
+    return await this.cityService.getById(id)
   }
 
   @Post()
-  async createComic(@Body() body) {
-    return await this.cityService.createComic(body)
+  async create(@Body() body) {
+    return await this.cityService.create(body)
   }
 
   @Put('/:id')
-  async updateComic(@Param('id') id: Number) {
-    return await this.cityService.updateComic(id)
+  async update(@Param('id') id: Number) {
+    return await this.cityService.update(id)
   }
 
   @Delete('/:id')
-  async deleteComic(@Param('id') id: Number) {
-    return await this.cityService.deleteComic(id)
+  async delete(@Param('id') id: number) {
+    return await this.cityService.delete(id)
   }
 }

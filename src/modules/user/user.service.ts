@@ -26,7 +26,7 @@ export class userService {
     return "actualizado correctamente " + id
   }
 
-  async deleteComic(id: Number) {
-    return "eliminado correctamente " + id
+  async deleteComic(id: number) {
+    return await this.userRepository.delete(id)
   }
 }

@@ -27,7 +27,7 @@ export class orderDetailController {
   }
 
   @Delete('/:id')
-  async deleteComic(@Param('id') id: Number) {
+  async deleteComic(@Param('id') id: number) {
     return await this.orderDetailService.deleteComic(id)
   }
 }
