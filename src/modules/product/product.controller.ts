@@ -11,11 +11,6 @@ export class ProductController {
     return await this.ProductService.getAll()
   }
 
-  @Get('/fruits')
-  async getAllFruits() {
-    return await this.ProductService.getAllFruits()
-  }
-
   @Get('/id/:id')
   async getComicId(@Param('id') id: Number) {
     return await this.ProductService.getById(id)

@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
-import { presentationProduct } from "./presentationProduct.entity";
+import { Product } from "./Product.entity";
 
 
 @Entity('presentationUnity')
@@ -11,6 +11,6 @@ export class presentationUnity {
   @Column('character varying', { unique: true })
   nombre: String;
 
-  @OneToMany(() => presentationProduct, presentationProduct => presentationProduct.presentationUnity)
-  presentations: presentationProduct[];
+  @OneToMany(() => Product, Product => Product.presentationUnity)
+  product: Product[];
 }

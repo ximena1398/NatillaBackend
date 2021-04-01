@@ -15,6 +15,4 @@ export class presentationProduct {
   @OneToMany(() => Product, Product => Product.typeProduct)
   Products: Product[];
 
-  @ManyToOne(() => presentationUnity, presentationUnity => presentationUnity.presentations)
-  presentationUnity: presentationUnity;
-}
+  
