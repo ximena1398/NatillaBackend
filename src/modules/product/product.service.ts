@@ -14,6 +14,13 @@ export class ProductService {
   async getAll() {
     return await this.ProductRepository.createQueryBuilder("product")
     .innerJoinAndSelect("product.presentationProduct","presentation")
+    .innerJoinAndSelect("product.typeProduct","typeProduct")
+    .innerJoinAndSelect("presentation.presentationUnity","unity").getMany();
+  }
+
+  async getAllFruits() {
+    return await this.ProductRepository.createQueryBuilder("product")
+    .innerJoinAndSelect("product.presentationProduct","presentation").where("product.typeProduct= :type",{type:'2'})
     .innerJoinAndSelect("presentation.presentationUnity","unity").getMany();
   }
 
