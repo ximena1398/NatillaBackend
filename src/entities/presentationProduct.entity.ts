@@ -15,4 +15,4 @@ export class presentationProduct {
   @OneToMany(() => Product, Product => Product.typeProduct)
   Products: Product[];
 
-  
+}

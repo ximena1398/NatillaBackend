@@ -37,5 +37,5 @@ export class Product{
 
   @ManyToOne(() => presentationUnity, presentationUnity => presentationUnity.product)
   presentationUnity: presentationUnity;
-}
+
 }
