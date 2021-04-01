@@ -3,7 +3,7 @@ import { presentationUnity } from "./presentationUnity.entity";
 import { Product } from "./product.entity";
 
 
-@Entity('presentationproduct')
+@Entity('presentationamount')
 export class presentationProduct {
 
   @PrimaryGeneratedColumn()
@@ -12,7 +12,7 @@ export class presentationProduct {
   @Column('text')
   cantidad: Number;
 
-  @OneToMany(() => Product, Product => Product.typeProduct)
+  @OneToMany(() => Product, Product => Product.presentationAmount)
   Products: Product[];
 
 }

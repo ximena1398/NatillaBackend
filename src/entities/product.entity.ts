@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column,ManyToOne, OneToMany } from "typeorm";
 import { typeProduct } from "./typeproduct.entity";
-import {presentationProduct} from "./presentationProduct.entity";
+import {presentationProduct} from "./presentationAmount.entity";
 import {presentationUnity} from "./presentationUnity.entity"
 import { synonyms } from "./synonyms.entity";
 import { orderDetail } from "./orderDetail.entity";
@@ -33,7 +33,7 @@ export class Product{
   typeProduct: typeProduct;
 
   @ManyToOne(() => presentationProduct, presentationProduct => presentationProduct.Products)
-  presentationProduct: presentationProduct;
+  presentationAmount: presentationProduct;
 
   @ManyToOne(() => presentationUnity, presentationUnity => presentationUnity.product)
   presentationUnity: presentationUnity;
