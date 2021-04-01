@@ -7,27 +7,27 @@ export class presentationUnityController {
   constructor(private readonly presentationUnityService: presentationUnityService) { }
 
   @Get('/all')
-  async getAllComic() {
+  async getAll() {
     return await this.presentationUnityService.getAllComic()
   }
 
   @Get('/id/:id')
-  async getComicId(@Param('id') id: Number) {
+  async get(@Param('id') id: Number) {
     return await this.presentationUnityService.getComicId(id)
   }
 
   @Post()
-  async createComic(@Body() body) {
+  async create(@Body() body) {
     return await this.presentationUnityService.createComic(body)
   }
 
   @Put('/:id')
-  async updateComic(@Param('id') id: Number) {
+  async update(@Param('id') id: Number) {
     return await this.presentationUnityService.updateComic(id)
   }
 
   @Delete('/:id')
-  async deleteComic(@Param('id') id: number) {
+  async delete(@Param('id') id: number) {
     return await this.presentationUnityService.deleteComic(id)
   }
 }
