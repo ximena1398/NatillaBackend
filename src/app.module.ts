@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductModule } from './modules/product/product.module';
 import { typeProductModule } from './modules/typeProduct/typeProduct.module';
-import { presentationProductModule } from './modules/presentationProduct/presentationProduct.module';
+import { presentationAmountModule } from './modules/presentationAmount/presentationAmount.module';
 import {presentationUnityModule} from './modules/presentationUnity/presentationUnity.module';
 import {synonymsModule} from './modules/synonyms/synonyms.module';
 import {orderModule} from './modules/order/order.module';
@@ -32,7 +32,7 @@ import { departmentModule } from './modules/department/department.module';
     }),
     ProductModule,
     typeProductModule,
-    presentationProductModule,
+    presentationAmountModule,
     presentationUnityModule,
     synonymsModule,
     orderDetailModule,

@@ -4,7 +4,7 @@ import { Product } from "./product.entity";
 
 
 @Entity('presentationamount')
-export class presentationProduct {
+export class presentationAmount {
 
   @PrimaryGeneratedColumn()
   id: Number;
