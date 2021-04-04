@@ -13,7 +13,6 @@ export class ProductService {
 
   async getAll() {
     return await this.ProductRepository.createQueryBuilder("product")
-    .innerJoinAndSelect("product.presentationAmount","presentation")
     .innerJoinAndSelect("product.typeProduct","typeProduct")
     .innerJoinAndSelect("presentation.presentationUnity","unity").getMany();
   }

@@ -7,7 +7,7 @@ export class ProductController {
   constructor(private readonly ProductService: ProductService) { }
 
   @Get('/all')
-  async getAllComic() {
+  async getAll() {
     return await this.ProductService.getAll()
   }
 
