@@ -14,7 +14,7 @@ export class ProductService {
   async getAll() {
     return await this.ProductRepository.createQueryBuilder("product")
     .innerJoinAndSelect("product.typeProduct","typeProduct")
-    .innerJoinAndSelect("presentation.presentationUnity","unity").getMany();
+    .innerJoinAndSelect("product.presentationUnity","unity").getMany();
   }
 
   async getById(id) {
