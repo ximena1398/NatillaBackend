@@ -1,6 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column,ManyToOne, OneToMany } from "typeorm";
 import { typeProduct } from "./typeproduct.entity";
-import {presentationAmount} from "./presentationAmount.entity";
 import {presentationUnity} from "./presentationUnity.entity"
 import { synonyms } from "./synonyms.entity";
 import { orderDetail } from "./orderDetail.entity";
@@ -14,11 +13,14 @@ export class Product{
   @Column('character varying', { unique: true })
   nombre: String;
 
-  @Column('text')
+  @Column()
   precio: Number;
 
-  @Column('text')
-  cantidad: Number;
+  @Column()
+  cantidadAlmacen: Number;
+
+  @Column()
+  cantidadAPedido: Number;
 
   @Column('varchar', { name: 'image_url', length: 300 })
   imageUrl: String;
@@ -31,9 +33,6 @@ export class Product{
 
   @ManyToOne(() => typeProduct, typeProduct => typeProduct.Products)
   typeProduct: typeProduct;
-
-  @ManyToOne(() => presentationAmount, presentationProduct => presentationProduct.Products)
-  presentationAmount: presentationAmount;
 
   @ManyToOne(() => presentationUnity, presentationUnity => presentationUnity.product)
   presentationUnity: presentationUnity;
