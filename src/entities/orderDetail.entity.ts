@@ -9,7 +9,7 @@ export class orderDetail {
   @PrimaryGeneratedColumn()
   id: Number;
 
-  @Column('character varying')
+  @Column()
   cantidad: Number;
 
   @ManyToOne(() => Product, Product => Product.orderDetail)
