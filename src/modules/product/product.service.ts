@@ -25,9 +25,14 @@ export class ProductService {
     return await this.ProductRepository.save(body)
   }
 
-  async update(id: Number) {
-    /* return await this.ProductRepository.update(id, body) */
-  }
+  async update(id: number, body: Product) {
+    try {
+        let res = await this.ProductRepository.update(id, body);
+        return res.raw.changedRows == 0 ? { error: 'NO_EXISTS' } : { success: 'OK' };
+    } catch (error) {
+        return { error: 'TRANSACTION_ERROR', detail: error };
+    }
+}
 
   async delete(id: number) {
     return await this.ProductRepository.delete(id)

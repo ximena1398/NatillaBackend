@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Body, Put, Delete, Param, Req } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Delete, Param, Req, BadGatewayException } from '@nestjs/common';
+import { Product } from 'src/entities/product.entity';
 import { ProductService } from './product.service';
 
 @Controller('product')
@@ -22,8 +23,11 @@ export class ProductController {
   }
 
   @Put('/:id')
-  async updateComic(@Param('id') id: Number) {
-    return await this.ProductService.update(id)
+  async updateUser(@Param('id') id:number, @Body() body: Product) {
+    const response: any = await this.ProductService.update(id, body);
+        if (response.success)
+            return response;
+        throw new BadGatewayException(response)
   }
 
   @Delete('/:id')
