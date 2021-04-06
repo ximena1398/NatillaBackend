@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Put, Delete, Param, Req } from '@nestjs/common';
 import { cityService } from './city.service';
 
-@Controller('synonyms')
+@Controller('city')
 export class cityController {
 
     constructor(private readonly cityService: cityService) { }

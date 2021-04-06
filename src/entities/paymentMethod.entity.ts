@@ -12,9 +12,6 @@ export class paymentMethod {
   @Column('character varying', { unique: true })
   nombre: String;
 
-  @Column()
-  numerotarjeta: Number;
-
   @OneToMany(() => order, order => order.paymentMethod)
   order: order[];
 }

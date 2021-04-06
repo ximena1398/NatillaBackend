@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Put, Delete, Param, Req } from '@nestjs/common';
 import { paymentMethodService } from './paymentMethod.service';
 
-@Controller('synonyms')
+@Controller('paymentMethod')
 export class paymentMethodController {
 
     constructor(private readonly paymentMethodService: paymentMethodService) { }

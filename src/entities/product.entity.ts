@@ -19,9 +19,6 @@ export class Product{
   @Column()
   cantidadAlmacen: Number;
 
-  @Column()
-  cantidadAPedido: Number;
-
   @Column('varchar', { name: 'image_url', length: 300 })
   imageUrl: String;
 

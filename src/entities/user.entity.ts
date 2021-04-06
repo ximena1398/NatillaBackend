@@ -26,6 +26,9 @@ export class user {
   celular: Number;
 
   @Column()
+  numerotarjeta: Number;
+
+  @Column()
   contraseña: String;
 
   @OneToMany(() => order, order => order.user)

@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Put, Delete, Param, Req } from '@nestjs/common';
 import { idTypeService } from './idType.service';
 
-@Controller('synonyms')
+@Controller('idType')
 export class idTypeController {
 
     constructor(private readonly idTypeService: idTypeService) { }
