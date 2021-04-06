@@ -7,7 +7,7 @@ export class userController {
     constructor(private readonly userService: userService) { }
   
     @Get('/all')
-  async getAllComic() {
+  async getAll() {
     return await this.userService.getAllComic()
   }
 
