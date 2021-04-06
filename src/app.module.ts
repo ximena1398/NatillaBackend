@@ -20,11 +20,11 @@ import { departmentModule } from './modules/department/department.module';
     TypeOrmModule.forRoot({
       name: "default",
       type: 'postgres',
-      host: 'ec2-52-44-31-100.compute-1.amazonaws.com',
+      host: 'ec2-54-235-108-217.compute-1.amazonaws.com',
       port: 5432,
-      username: 'ipjuprwaxyefcr',
-      password: '75bbfbff9e72a43e86782bafa67d41a7fa5c1c9b14604d93dd1e3cae91133326',
-      database: 'dedt789mdesu7o',
+      username: 'ryfjjwrnlplcbj',
+      password: '2e8b18562155edae91d1074ceef4980a313a7bf56bed1a42a1b3ee40f6bceb2c',
+      database: 'dd0qpjspcgdero',
       entities: ['dist/entities/*.entity.js'],
       synchronize: true,
       ssl: { rejectUnauthorized: false }
