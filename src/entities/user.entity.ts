@@ -10,16 +10,16 @@ export class user {
   @PrimaryGeneratedColumn()
   id: Number;
 
-  @Column('character varying', { unique: true })
+  @Column({ unique: true })
   nombre: String;
 
-  @Column()
+  @Column({ unique: true })
   identificacion:Number;
 
   @Column()
   direccion: String;
 
-  @Column()
+  @Column({ unique: true })
   correo: String;
 
   @Column()
