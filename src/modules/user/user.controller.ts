@@ -16,10 +16,10 @@ export class userController {
     return await this.userService.getComicId(id)
   }
 
-  @Post()
+  /* @Post()
   async createComic(@Body() body) {
     return await this.userService.createComic(body)
-  }
+  } */
 
   @Put('/:id')
   async updateComic(@Param('id') id: Number) {

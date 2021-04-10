@@ -1,35 +1,49 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne, BeforeInsert } from "typeorm";
 import { city } from "./city.entity";
 import { idType } from "./idType.entity";
 import { order } from "./order.entity";
-
+const bcrypt = require('bcrypt');
 
 @Entity('user')
 export class user {
+
+  @PrimaryGeneratedColumn('uuid') id: string;
+
+
+  @Column({
+    type: 'varchar',
+    nullable: false,
+    unique: true
+  })
+  username: string;
+
+  @Column({
+    type: 'varchar',
+    nullable: false
+  })
+  password: string;
   
-  @PrimaryGeneratedColumn()
-  id: Number;
+  @Column({
+    type: 'varchar',
+    nullable: false
+  })
+  email: string;
+
+  @BeforeInsert() async hashPassword() {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
 
   @Column({ unique: true })
-  nombre: String;
-
-  @Column({ unique: true })
-  identificacion:Number;
+  identificacion: string;
 
   @Column()
-  direccion: String;
-
-  @Column({ unique: true })
-  correo: String;
+  direccion: string;
 
   @Column()
   celular: Number;
 
   @Column()
-  numerotarjeta: Number;
-
-  @Column()
-  contraseña: String;
+  numerotarjeta: string;
 
   @OneToMany(() => order, order => order.user)
   order: order[];
