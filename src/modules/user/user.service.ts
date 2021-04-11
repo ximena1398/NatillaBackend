@@ -6,7 +6,7 @@ import { user } from '../../entities/user.entity';
 import { createUserDto } from './dto/createUser.dto';
 import { loginUserDto } from './dto/login.dto';
 import { userDto } from './dto/user.dto';
-import { comparePasswords } from '@shared/utils';
+import { comparePasswords } from '../../shared/utils';
 
 @Injectable()
 export class userService {
@@ -38,6 +38,28 @@ async findByLogin({ username, password }: loginUserDto): Promise<userDto> {
       throw new HttpException('Invalid credentials', HttpStatus.UNAUTHORIZED);    
   }
   
+  return toUserDto(user);  
+}
+
+
+async findByPayload({ username }: any): Promise<userDto> {
+  return await this.findOne({ 
+      where:  { username } });  
+}
+
+async create(userDto: createUserDto): Promise<userDto> {    
+  const { username, password, email, identificacion, direccion, numerotarjeta,idType, city } = userDto;
+  
+  // check if the user exists in the db    
+  const userInDb = await this.userRepository.findOne({ 
+      where: { username } 
+  });
+  if (userInDb) {
+      throw new HttpException('User already exists', HttpStatus.BAD_REQUEST);    
+  }
+  
+  const user: user = await this.userRepository.create({ username, password, email, identificacion, direccion, numerotarjeta,idType, city });
+  await this.userRepository.save(user);
   return toUserDto(user);  
 }
 

@@ -13,6 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { idTypeModule } from './modules/idType/idType.module';
 import { cityModule } from './modules/city/city.module';
 import { departmentModule } from './modules/department/department.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 
 @Module({
@@ -40,6 +41,7 @@ import { departmentModule } from './modules/department/department.module';
     idTypeModule,
     cityModule,
     departmentModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

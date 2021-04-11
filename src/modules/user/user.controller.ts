@@ -11,23 +11,23 @@ export class userController {
     return await this.userService.getAllComic()
   }
 
-  @Get('/id/:id')
+  /* @Get('/id/:id')
   async getComicId(@Param('id') id: Number) {
     return await this.userService.getComicId(id)
-  }
+  } */
 
   /* @Post()
   async createComic(@Body() body) {
     return await this.userService.createComic(body)
   } */
 
-  @Put('/:id')
+  /* @Put('/:id')
   async updateComic(@Param('id') id: Number) {
     return await this.userService.updateComic(id)
-  }
+  } */
 
-  @Delete('/:id')
+  /* @Delete('/:id')
   async deleteComic(@Param('id') id: number) {
     return await this.userService.deleteComic(id)
-  }
+  } */
 }

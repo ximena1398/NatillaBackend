@@ -1,4 +1,6 @@
 import { IsEmail, MaxLength, Length, IsNumber, IsNotEmpty, IsOptional } from 'class-validator';
+import { city } from 'src/entities/city.entity';
+import { idType } from 'src/entities/idType.entity';
 
 export class createUserDto {
     
@@ -18,8 +20,8 @@ export class createUserDto {
 	numerotarjeta: string;
     
     @IsNotEmpty() @Length(1)
-    idType:string;
+    idType: idType;
     
     @IsNotEmpty() @Length(1)
-    city:string;
+    city: city;
 }
