@@ -11,7 +11,7 @@ import {
   } from '@nestjs/common';
  
   import { RegistrationStatus } from './interfaces/regisration-status.interface';
-  import { AuthService } from './auth.service';
+  import { authService } from './auth.service';
   import { LoginStatus } from './interfaces/login-status.interface';
   import { JwtPayload } from './interfaces/payload.interface';
   import { AuthGuard } from '@nestjs/passport';
@@ -19,8 +19,8 @@ import {
   import { loginUserDto } from '../user/dto/login.dto';
   
   @Controller('auth')
-  export class AuthController {
-    constructor(private readonly authService: AuthService) {}
+  export class authController {
+    constructor(private readonly authService: authService) {}
   
     @Post('register')
     public async register(
