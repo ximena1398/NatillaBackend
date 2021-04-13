@@ -22,9 +22,9 @@ export class cityService {
     return await this.cityRepository.save(body)
   }
 
-  async update(id: Number) {
+  /* async update(id: Number) {
     return "actualizado correctamente " + id
-  }
+  } */
 
   async delete(id: number) {
     return await this.cityRepository.delete(id)
