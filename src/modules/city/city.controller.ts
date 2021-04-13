@@ -21,10 +21,10 @@ export class cityController {
     return await this.cityService.create(body)
   }
 
-  @Put('/:id')
+  /* @Put('/:id')
   async update(@Param('id') id: Number) {
     return await this.cityService.update(id)
-  }
+  } */
 
   @Delete('/:id')
   async delete(@Param('id') id: number) {
