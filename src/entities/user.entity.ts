@@ -40,7 +40,7 @@ export class user {
   direccion: string;
 
   @Column()
-  celular: Number;
+  celular: string;
 
   @Column()
   numerotarjeta: string;
