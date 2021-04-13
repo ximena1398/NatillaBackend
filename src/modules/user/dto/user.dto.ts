@@ -13,6 +13,9 @@ export class userDto {
     
     @IsNotEmpty() @Length(2, 50)
     direccion: string;
+
+    @IsNotEmpty() @Length(2, 50)
+    celular: string;
     
     @IsNotEmpty() @IsOptional()
     @Length(5, 20)
