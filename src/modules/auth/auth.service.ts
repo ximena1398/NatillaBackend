@@ -1,6 +1,7 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { RegistrationStatus } from './interfaces/regisration-status.interface';
 import { userService } from '../user/user.service';
+import {userModule} from '../user/user.module'
 import { LoginStatus } from './interfaces/login-status.interface';
 import { JwtPayload } from './interfaces/payload.interface';
 import { JwtService } from '@nestjs/jwt';
