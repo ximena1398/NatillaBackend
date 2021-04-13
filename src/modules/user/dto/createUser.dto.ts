@@ -1,6 +1,7 @@
 import { IsEmail, MaxLength, Length, IsNumber, IsNotEmpty, IsOptional } from 'class-validator';
 import { city } from 'src/entities/city.entity';
 import { idType } from 'src/entities/idType.entity';
+import { Column } from 'typeorm';
 
 export class createUserDto {
     
@@ -15,7 +16,7 @@ export class createUserDto {
     @IsNotEmpty() @Length(2, 50)
     direccion: string;
 
-    @IsNotEmpty() @Length(2, 50)
+    @Column()
     celular: string;
     
     @IsNotEmpty() @IsOptional()
