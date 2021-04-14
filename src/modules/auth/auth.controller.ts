@@ -41,12 +41,20 @@ import {
     public async login(@Body() loginUserDto: loginUserDto): Promise<LoginStatus> {
       return await this.authService.login(loginUserDto);
     }
-  
+
+    @Post('verify')
+    public async verify(@Body() payload: JwtPayload): Promise<LoginStatus> {
+      return await this.authService.validateUser(payload);
+    }
+
     @Get('whoami')
     @UseGuards(AuthGuard())
     public async testAuth(@Req() req: any): Promise<JwtPayload> {
       return req.user;
     }
+
+    
+
   }
   
 

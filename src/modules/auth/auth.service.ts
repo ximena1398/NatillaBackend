@@ -34,7 +34,7 @@ export class authService {
     return status;
   }
 
-  async login(loginUserDto: loginUserDto): Promise<LoginStatus> {
+  async login(loginUserDto: loginUserDto,): Promise<LoginStatus> {
     // find user in db
     const user = await this.usersService.findByLogin(loginUserDto);
 
@@ -47,7 +47,7 @@ export class authService {
     };
   }
 
-  async validateUser(payload: JwtPayload): Promise<userDto> {
+  async validateUser(payload: JwtPayload) {
     const user = await this.usersService.findByPayload(payload);
     if (!user) {
       throw new HttpException('Invalid token', HttpStatus.UNAUTHORIZED);
@@ -56,10 +56,11 @@ export class authService {
   }
 
   private _createToken({ username }: userDto): any {
-    const expiresIn = "12h";
+    const expiresIn = "10s";
 
     const user: JwtPayload = { username };
     const accessToken = this.jwtService.sign(user);
+
     return {
       expiresIn,
       accessToken,
