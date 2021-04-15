@@ -17,6 +17,7 @@ import {
   import { AuthGuard } from '@nestjs/passport';
   import { createUserDto } from '../user/dto/createUser.dto';
   import { loginUserDto } from '../user/dto/login.dto';
+import { userDto } from '../user/dto/user.dto';
   
   @Controller('auth')
   export class authController {
@@ -43,7 +44,7 @@ import {
     }
 
     @Post('verify')
-    public async verify(@Body() payload: JwtPayload): Promise<LoginStatus> {
+    public async verify(@Body() payload: JwtPayload): Promise<userDto> {
       return await this.authService.validateUser(payload);
     }
 
