@@ -44,7 +44,7 @@ import { userDto } from '../user/dto/user.dto';
     }
 
     @Post('verify')
-    public async verify(@Body() payload: JwtPayload): Promise<userDto> {
+    public async verify(@Body() payload: string): Promise<userDto> {
       return await this.authService.validateUser(payload);
     }
 

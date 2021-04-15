@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Put, Delete, Param, Req, UseGuards, Request } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Delete, Param, Req, UseGuards, Request, BadGatewayException } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { userDto } from './dto/user.dto';
 import { userService } from './user.service';
@@ -12,32 +12,26 @@ export class userController {
 
   constructor(private readonly userService: userService) { }
 
-  @Get()
-  async getAllUsers(): Promise<userDto[]> {
-    return await this.userService.getAll();
-  }
-
   @Post()
-  async newUser(@Body() user: createUserDto): Promise<userDto> {
-    return await this.userService.create(user);
-  }
+    async createUser(@Body() body: createUserDto) {
+        const response: any = await this.userService.create(body);
+        if (response.success)
+            return response;
+        throw new BadGatewayException(response)
+    }
 
-  @Get('/me')
-@ApiBearerAuth()
-@UseGuards(AuthGuard('jwt'))
-async getUserById(@Auth() { id }: userDto): Promise<userDto> {
-    return await this.userService.getUserById(id);
-}
-
-  /* @Put(':id')
-  @ApiBearerAuth()
-  @UseGuards(AuthGuard('jwt'))
-  async updateUser(
-    @Param('id', ValidUserIdPipe) id: string,
-    @Body() user: userDto
-  ): Promise<userDto> {
-    return await this.userService.updateUser(id, user);
-  } */
+    @Get()
+    @UseGuards(AuthGuard('bearer'))
+    async getTraderAll(){
+        return this.userService.getAll();
+    }
+    @Put(':id')
+    async updateUser(@Param('id') id:number, @Body() body: userDto) {
+        const response: any = await this.userService.updateUser(id, body);
+        if (response.success)
+            return response;
+        throw new BadGatewayException(response)
+    }
 
    /* @UseGuards(AuthGuard('jwt'))
    @ApiBearerAuth()

@@ -24,6 +24,15 @@ export class userService {
     return toUserDto(user);  
 }
 
+async updateUser(id: number, user: userDto) {
+  try {
+      let res = await this.userRepository.update(id, user);
+      return res.raw.changedRows == 0 ? { error: 'NO_EXISTS' } : { success: 'OK' };
+  } catch (error) {
+      return { error: 'TRANSACTION_ERROR', detail: error };
+  }
+}
+
 async getUserById(id)  {
   return await this.userRepository.findOne({ where: { id } });
 }
