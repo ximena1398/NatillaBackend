@@ -24,6 +24,10 @@ export class userService {
     return toUserDto(user);  
 }
 
+async getUserById(id)  {
+  return await this.userRepository.findOne({ where: { id } });
+}
+
 async findByLogin({ username, password }: loginUserDto): Promise<userDto> {    
   const user = await this.userRepository.findOne({ where: { username } });
   
