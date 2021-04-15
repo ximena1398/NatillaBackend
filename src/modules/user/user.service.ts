@@ -15,7 +15,7 @@ export class userService {
     @InjectRepository(user) private readonly userRepository: Repository<user>
   ) { }
 
-  async getAllComic() {
+  async getAll() {
     return await this.userRepository.find()
   }
 
