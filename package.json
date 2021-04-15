@@ -26,9 +26,11 @@
     "@nestjs/jwt": "^7.2.0",
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/swagger": "^4.8.0",
     "@nestjs/typeorm": "^7.1.5",
     "bcrypt": "^5.0.1",
     "class-validator": "^0.13.1",
+    "fastify-swagger": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
@@ -38,6 +40,7 @@
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
     "shared-utils": "^2.0.1",
+    "swagger-ui-express": "^4.1.6",
     "typeorm": "^0.2.29"
   },
   "devDependencies": {

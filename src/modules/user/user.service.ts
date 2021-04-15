@@ -15,13 +15,26 @@ export class userService {
     @InjectRepository(user) private readonly userRepository: Repository<user>
   ) { }
 
-  async getAllComic() {
+  async getAll() {
     return await this.userRepository.find()
   }
 
   async findOne(options?: object): Promise<userDto> {
     const user =  await this.userRepository.findOne(options);    
     return toUserDto(user);  
+}
+
+async updateUser(id: number, user: userDto) {
+  try {
+      let res = await this.userRepository.update(id, user);
+      return res.raw.changedRows == 0 ? { error: 'NO_EXISTS' } : { success: 'OK' };
+  } catch (error) {
+      return { error: 'TRANSACTION_ERROR', detail: error };
+  }
+}
+
+async getUserById(id)  {
+  return await this.userRepository.findOne({ where: { id } });
 }
 
 async findByLogin({ username, password }: loginUserDto): Promise<userDto> {    
