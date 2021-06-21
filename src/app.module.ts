@@ -1,15 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ProductModule } from './modules/product/product.module';
-import { typeProductModule } from './modules/typeProduct/typeProduct.module';
-import {presentationUnityModule} from './modules/presentationUnity/presentationUnity.module';
-import {synonymsModule} from './modules/synonyms/synonyms.module';
-import {orderModule} from './modules/order/order.module';
-import {orderDetailModule} from './modules/orderDetail/orderDetail.module';
-import {paymentMethodModule} from './modules/paymentMethod/paymentMethod.module';
-import {userModule} from './modules/user/user.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { idTypeModule } from './modules/idType/idType.module';
 import { cityModule } from './modules/city/city.module';
 import { departmentModule } from './modules/department/department.module';
