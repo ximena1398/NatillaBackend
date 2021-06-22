@@ -7,27 +7,27 @@ export class idTypeController {
     constructor(private readonly idTypeService: idTypeService) { }
   
     @Get('/all')
-  async getAllComic() {
-    return await this.idTypeService.getAllComic()
+  async getAll() {
+    return await this.idTypeService.getAll()
   }
 
-  @Get('/id/:id')
-  async getComicId(@Param('id') id: Number) {
-    return await this.idTypeService.getComicId(id)
+  @Get(':id')
+  async getById(@Param('id') id: Number) {
+    return await this.idTypeService.getById(id)
   }
 
   @Post()
-  async createComic(@Body() body) {
-    return await this.idTypeService.createComic(body)
+  async create(@Body() body) {
+    return await this.idTypeService.create(body)
   }
 
-  @Put('/:id')
-  async updateComic(@Param('id') id: Number) {
-    return await this.idTypeService.updateComic(id)
-  }
+  /* @Put('/:id')
+  async update(@Param('id') id: Number) {
+    return await this.idTypeService.update(id)
+  } */
 
   @Delete('/:id')
-  async deleteComic(@Param('id') id: number) {
-    return await this.idTypeService.deleteComic(id)
+  async delete(@Param('id') id: number) {
+    return await this.idTypeService.delete(id)
   }
 }

@@ -1,24 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { idType } from 'src/entities/idType.entity';
+import { eps } from 'src/entities/eps.entity';
 import { Repository } from 'typeorm';
 @Injectable()
-export class idTypeService {
+export class epsService {
     
   constructor(
-    @InjectRepository(idType) private readonly idTypeRepository: Repository<idType>
+    @InjectRepository(eps) private readonly epsRepository: Repository<eps>
   ) { }
 
   async getAll() {
-    return await this.idTypeRepository.find()
+    return await this.epsRepository.find()
   }
 
   async getById(id) {
-    return await this.idTypeRepository.findOne(id)
+    return await this.epsRepository.findOne(id)
   }
 
   async create(body) {
-    return await this.idTypeRepository.save(body)
+    return await this.epsRepository.save(body)
   }
 
   /* async update(id: Number) {
@@ -26,6 +26,6 @@ export class idTypeService {
   } */
 
   async delete(id: number) {
-    return await this.idTypeRepository.delete(id)
+    return await this.epsRepository.delete(id)
   }
 }

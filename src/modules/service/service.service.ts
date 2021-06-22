@@ -1,24 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { idType } from 'src/entities/idType.entity';
+import { service } from 'src/entities/service.entity';
 import { Repository } from 'typeorm';
 @Injectable()
-export class idTypeService {
+export class serviceService {
     
   constructor(
-    @InjectRepository(idType) private readonly idTypeRepository: Repository<idType>
+    @InjectRepository(service) private readonly serviceRepository: Repository<service>
   ) { }
 
   async getAll() {
-    return await this.idTypeRepository.find()
+    return await this.serviceRepository.find()
   }
 
   async getById(id) {
-    return await this.idTypeRepository.findOne(id)
+    return await this.serviceRepository.findOne(id)
   }
 
   async create(body) {
-    return await this.idTypeRepository.save(body)
+    return await this.serviceRepository.save(body)
   }
 
   /* async update(id: Number) {
@@ -26,6 +26,6 @@ export class idTypeService {
   } */
 
   async delete(id: number) {
-    return await this.idTypeRepository.delete(id)
+    return await this.serviceRepository.delete(id)
   }
 }

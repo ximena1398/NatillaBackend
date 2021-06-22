@@ -37,6 +37,10 @@ async getUserById(id)  {
   return await this.userRepository.findOne({ where: { id } });
 }
 
+async getUserByEmail(data: any) {
+  return await this.userRepository.findOne(data);
+}
+
 async findByLogin({ username, password }: loginUserDto): Promise<userDto> {    
   const user = await this.userRepository.findOne({ where: { username } });
   
@@ -61,7 +65,7 @@ async findByPayload({ username }: any): Promise<userDto> {
 }
 
 async create(userDto: createUserDto): Promise<userDto> {    
-  const { username, password, email,celular, identificacion, direccion, numerotarjeta,idType, city } = userDto;
+  const { username, password, } = userDto;
   
   // check if the user exists in the db    
   const userInDb = await this.userRepository.findOne({ 
@@ -71,7 +75,7 @@ async create(userDto: createUserDto): Promise<userDto> {
       throw new HttpException('User already exists', HttpStatus.BAD_REQUEST);    
   }
   
-  const user: user = await this.userRepository.create({ username, password, email,celular, identificacion, direccion, numerotarjeta,idType, city });
+  const user: user = await this.userRepository.create({ username, password,});
   await this.userRepository.save(user);
   return toUserDto(user);  
 }

@@ -1,15 +1,18 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
 import { seller } from "./seller";
 
-@Entity('idType')
-export class idType {
+@Entity('sisben')
+export class sisben {
   
   @PrimaryGeneratedColumn()
   id: Number;
 
   @Column('character varying', { unique: true })
-  nombre: String;
+  letter: String;
 
-  @OneToMany(() => seller, seller => seller.idType)
+  @Column()
+  number: number;
+
+  @OneToMany(() => seller, seller => seller.genre)
   seller: seller[];
 }
