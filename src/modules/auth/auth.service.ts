@@ -16,7 +16,7 @@ export class authService {
   constructor(
     private readonly usersService: userService,
     private readonly jwtService: JwtService,
-    private readonly userRepository: Repository<user>,
+    /* private readonly userRepository: Repository<user>, */
   ) {}
 
   async register(userDto: createUserDto): Promise<RegistrationStatus> {
@@ -53,7 +53,7 @@ export class authService {
   async validateUser(userToken: string): Promise<any> {
     let payload: any = this.jwtService.decode(userToken);
     if (payload) {
-        let response = await this.userRepository.findOne({where: { ...payload, token: userToken } })
+        let response = await this.usersService.findOne({where: { ...payload, token: userToken } })
         if (response)
             return response;
 
