@@ -5,7 +5,7 @@ import { seller } from "./seller.entity";
 
 
 @Entity('nationality')
-export class nationality {
+export class department {
   
   @PrimaryGeneratedColumn()
   id: Number;
@@ -13,9 +13,9 @@ export class nationality {
   @Column('character varying', { unique: true })
   nombre: String;
 
-  @OneToMany(() => municipality, municipality => municipality.nationality)
+  @OneToMany(() => municipality, municipality => municipality.department)
   municipality: municipality[];
 
-  @OneToMany(() => seller, seller => seller.nationality)
+  @OneToMany(() => seller, seller => seller.department)
   seller: seller[];
 }

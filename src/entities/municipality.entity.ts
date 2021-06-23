@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
-import { nationality } from "./nationality.entity";
+import { department } from "./department.entity";
 import {seller} from './seller.entity'
 
 
@@ -16,6 +16,6 @@ export class municipality {
   @OneToMany(() => seller, seller => seller.municipality)
   seller: seller[];
 
-  @ManyToOne(()=>nationality, nationality=>nationality.municipality)
-  nationality: nationality
+  @ManyToOne(()=>department, department=>department.municipality)
+  department: department
 }

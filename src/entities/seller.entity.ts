@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne, BeforeInsert } from "typeorm";
-import { nationality } from "./nationality.entity";
+import { department } from "./department.entity";
 import { idType } from "./idType.entity";
 import { municipality } from "./municipality.entity";
 import { genre } from "./genre.entity";
@@ -51,8 +51,8 @@ export class seller {
   @ManyToOne(() => municipality, municipality => municipality.seller)
   municipality: municipality;
 
-  @ManyToOne(() => nationality, nationality => nationality.seller)
-  nationality: nationality;
+  @ManyToOne(() => department, department => department.seller)
+  department: department;
 
   @ManyToOne(() => idType, idType => idType.seller)
   idType: idType;

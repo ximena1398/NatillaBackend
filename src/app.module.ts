@@ -12,7 +12,7 @@ import { genreModule } from './modules/genre/genre.module';
 import { idTypeModule } from './modules/idType/idType.module';
 import { indigenousReservationModule } from './modules/indigenousReservation/indigenousReservation.module';
 import { municipalityModule } from './modules/municipality/municipality.module';
-import { nationalityModule } from './modules/nationality/nationality.module';
+import { departmentModule } from './modules/department/department.module';
 import { productModule } from './modules/product/product.module';
 import { sellerModule } from './modules/seller/seller.module';
 import { sellerProductsModule } from './modules/sellerProducts/sellerProducts.module';
@@ -48,7 +48,7 @@ import { victimOfConflictModule } from './modules/victimOfConflict/victimOfConfl
     idTypeModule,
     indigenousReservationModule,
     municipalityModule,
-    nationalityModule,
+    departmentModule,
     productModule,
     sellerModule,
     sellerProductsModule,
