@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
 import { municipality } from "./municipality.entity";
-import { seller } from "./seller";
+import { seller } from "./seller.entity";
 
 
 
