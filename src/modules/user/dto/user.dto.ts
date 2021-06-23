@@ -5,5 +5,5 @@ import { Column } from 'typeorm';
 export class userDto {
 
     @IsNotEmpty()  username: string;
-    @IsNotEmpty()  id: string;
+    @IsNotEmpty()  password: string;
 }
