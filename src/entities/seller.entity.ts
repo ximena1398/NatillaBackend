@@ -45,6 +45,9 @@ export class seller {
   })
   secondSurname: string;
 
+  @Column()
+  pension: boolean;
+
   @Column({ unique: true })
   idNumber: number;
 

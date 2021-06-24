@@ -10,7 +10,7 @@ export class department {
   @PrimaryGeneratedColumn()
   id: Number;
 
-  @Column('character varying', { unique: true })
+  @Column('character varying')
   nombre: String;
 
   @OneToMany(() => municipality, municipality => municipality.department)
