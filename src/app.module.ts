@@ -22,7 +22,7 @@ import { sisbenModule } from './modules/sisben/sisben.module';
 import { typeOfDwellingModule } from './modules/typeOfDwelling/typeOfDwelling.module';
 import { typeOfSellerModule } from './modules/typeOfSeller/typeOfSeller.module';
 import { userModule } from './modules/user/user.module';
-import { victimOfConflictModule } from './modules/victimOfConflict/victimOfConflict.module';
+
 
 
 @Module({
@@ -59,7 +59,6 @@ import { victimOfConflictModule } from './modules/victimOfConflict/victimOfConfl
     typeOfDwellingModule,
     typeOfSellerModule,
     userModule,
-    victimOfConflictModule,
     AuthModule,
   ],
   controllers: [AppController],

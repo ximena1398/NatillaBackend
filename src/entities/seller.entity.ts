@@ -5,7 +5,6 @@ import { municipality } from "./municipality.entity";
 import { genre } from "./genre.entity";
 import { civilStatus } from "./civilStatus.entity";
 import { sisben } from "./sisben.entity";
-import { victimOfConflict } from "./victimOfConflict.entity";
 import { indigenousReservation } from "./indigenousReservation.entity";
 import { eps } from "./eps.entity";
 import { typeOfSeller } from "./typeOfSeller.entity";
@@ -68,9 +67,6 @@ export class seller {
 
   @ManyToOne(() => sisben, sisben => sisben.seller)
   sisben: sisben;
-
-  @ManyToOne(() => victimOfConflict, victimOfConflict => victimOfConflict.seller)
-  victimOfConflict: victimOfConflict;
 
   @ManyToOne(() => indigenousReservation, indigenousReservation => indigenousReservation.seller)
   indigenousReservation: indigenousReservation;

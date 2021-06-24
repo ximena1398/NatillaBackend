@@ -7,7 +7,7 @@ export class sisben {
   @PrimaryGeneratedColumn()
   id: Number;
 
-  @Column('character varying', { unique: true })
+  @Column('character varying')
   letter: String;
 
   @Column()
