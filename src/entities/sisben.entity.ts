@@ -10,9 +10,6 @@ export class sisben {
   @PrimaryGeneratedColumn()
   id: Number;
 
-  @Column('character varying', { unique: true })
-  nombre: String;
-
   @ManyToOne(() => sisbenNumber, sisbenNumber => sisbenNumber.sisben)
   sisbenNumber: sisbenNumber;
 
