@@ -4,7 +4,7 @@ import { seller } from "./seller.entity";
 
 
 
-@Entity('nationality')
+@Entity('department')
 export class department {
   
   @PrimaryGeneratedColumn()
