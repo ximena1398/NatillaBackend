@@ -10,7 +10,7 @@ export class municipality {
   @PrimaryGeneratedColumn()
   id: Number;
 
-  @Column('character varying', { unique: true })
+  @Column('character varying')
   nombre: String;
 
   @OneToMany(() => seller, seller => seller.municipality)
