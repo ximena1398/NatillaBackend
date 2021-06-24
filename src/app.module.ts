@@ -22,6 +22,8 @@ import { sisbenModule } from './modules/sisben/sisben.module';
 import { typeOfDwellingModule } from './modules/typeOfDwelling/typeOfDwelling.module';
 import { typeOfSellerModule } from './modules/typeOfSeller/typeOfSeller.module';
 import { userModule } from './modules/user/user.module';
+import { sisbenLetterModule } from './modules/sisbenLetter/sisbenLetter.module';
+import { sisbenNumberModule } from './modules/sisbenNumber/sisbenNumber.module';
 
 
 
@@ -60,6 +62,8 @@ import { userModule } from './modules/user/user.module';
     typeOfSellerModule,
     userModule,
     AuthModule,
+    sisbenLetterModule,
+    sisbenNumberModule
   ],
   controllers: [AppController],
   providers: [AppService],

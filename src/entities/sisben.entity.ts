@@ -1,5 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
 import { seller } from "./seller.entity";
+import { product } from "./product.entity";
+import { sisbenNumber } from "./sisbenNumber.entity";
+import { sisbenLetter } from "./sisbenLetter.entity";
 
 @Entity('sisben')
 export class sisben {
@@ -7,12 +10,15 @@ export class sisben {
   @PrimaryGeneratedColumn()
   id: Number;
 
-  @Column('character varying')
-  letter: String;
+  @Column('character varying', { unique: true })
+  nombre: String;
 
-  @Column()
-  number: number;
+  @ManyToOne(() => sisbenNumber, sisbenNumber => sisbenNumber.sisben)
+  sisbenNumber: sisbenNumber;
 
-  @OneToMany(() => seller, seller => seller.genre)
+  @ManyToOne(() => sisbenLetter, sisbenLetter => sisbenLetter.sisben)
+  sisbenLetter: sisbenLetter;
+
+  @OneToMany(() => seller, seller => seller.sisben)
   seller: seller[];
 }
