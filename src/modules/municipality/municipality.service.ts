@@ -13,6 +13,14 @@ export class municipalityService {
     return await this.municipalityRepository.find()
   }
 
+  async getMunicipalityByDepartment(id) {
+    return await this.municipalityRepository.createQueryBuilder("municipality")
+      .where("municipality.department = :id")
+      .setParameters({ id: id })
+      .innerJoinAndSelect("municipality.department", "department")
+      .getMany();
+  }
+
   async getById(id) {
     return await this.municipalityRepository.findOne(id)
   }

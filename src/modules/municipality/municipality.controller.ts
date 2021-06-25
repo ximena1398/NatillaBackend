@@ -15,6 +15,10 @@ export class municipalityController {
   async getById(@Param('id') id: Number) {
     return await this.municipalityService.getById(id)
   }
+  @Get('/department/:id')
+  async getMunicipalityByDepartment(@Param('id') id: Number) {
+    return await this.municipalityService.getMunicipalityByDepartment(id)
+  }
 
   @Post()
   async create(@Body() body) {
