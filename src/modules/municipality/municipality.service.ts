@@ -18,6 +18,7 @@ export class municipalityService {
       .where("municipality.department = :id")
       .setParameters({ id: id })
       .innerJoinAndSelect("municipality.department", "department")
+      .orderBy('municipality.nombre', 'ASC')
       .getMany();
   }
 

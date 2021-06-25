@@ -10,7 +10,9 @@ export class departmentService {
   ) { }
 
   async getAll() {
-    return await this.departmentRepository.find()
+      return await this.departmentRepository.createQueryBuilder("department")
+        .orderBy('department.nombre', 'ASC')
+        .getMany(); 
   }
 
   async getById(id) {
