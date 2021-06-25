@@ -14,6 +14,7 @@ import { typeOfDwelling } from "./typeOfDwelling.entity";
 import { sellerServices } from "./sellerServices.entity";
 import { sellerDisabilitys } from "./sellerDisabilitys.entity";
 import { sellerProducts } from "./sellerProducts.entity";
+import { internet } from "./internet.entity";
 const bcrypt = require('bcrypt');
 
 @Entity('seller')
@@ -61,6 +62,9 @@ export class seller {
 
   @ManyToOne(() => genre, genre => genre.seller)
   genre: genre;
+
+  @ManyToOne(() => internet, internet => internet.seller)
+  internet: internet;
 
   @ManyToOne(() => civilStatus, civilStatus => civilStatus.seller)
   civilStatus: civilStatus;

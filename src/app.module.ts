@@ -24,6 +24,7 @@ import { typeOfSellerModule } from './modules/typeOfSeller/typeOfSeller.module';
 import { userModule } from './modules/user/user.module';
 import { sisbenLetterModule } from './modules/sisbenLetter/sisbenLetter.module';
 import { sisbenNumberModule } from './modules/sisbenNumber/sisbenNumber.module';
+import { internetModule } from './modules/internet/internet.module';
 
 
 
@@ -63,7 +64,8 @@ import { sisbenNumberModule } from './modules/sisbenNumber/sisbenNumber.module';
     userModule,
     AuthModule,
     sisbenLetterModule,
-    sisbenNumberModule
+    sisbenNumberModule,
+    internetModule
   ],
   controllers: [AppController],
   providers: [AppService],
