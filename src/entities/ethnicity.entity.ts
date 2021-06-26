@@ -11,8 +11,8 @@ export class ethnicity {
   @Column('character varying', { unique: true })
   nombre: String;
 
-  @OneToMany(() => seller, seller => seller.ethnicity)
-  seller: seller[];
+  /* @OneToMany(() => seller, seller => seller.ethnicity)
+  seller: seller[]; */
 
   @OneToMany(() => sellerEthnicity, sellerEthnicity => sellerEthnicity.ethnicity)
   sellerEthnicity: sellerEthnicity[];

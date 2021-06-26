@@ -15,6 +15,7 @@ import { sellerServices } from "./sellerServices.entity";
 import { sellerDisabilitys } from "./sellerDisabilitys.entity";
 import { sellerEthnicity } from "./sellerEthnicity.entity";
 import { internet } from "./internet.entity";
+import { sellerFamiliyNucleus } from "./sellerFamilyNucleus.entity";
 const bcrypt = require('bcrypt');
 
 @Entity('seller')
@@ -71,18 +72,18 @@ export class seller {
 
   @ManyToOne(() => sisben, sisben => sisben.seller)
   sisben: sisben;
-
+/* 
   @ManyToOne(() => indigenousReservation, indigenousReservation => indigenousReservation.seller)
-  indigenousReservation: indigenousReservation;
+  indigenousReservation: indigenousReservation; */
 
   @ManyToOne(() => eps, eps => eps.seller)
   eps: eps;
-
+/* 
   @ManyToOne(() => typeOfSeller, typeOfSeller => typeOfSeller.seller)
-  typeOfSeller: typeOfSeller;
+  typeOfSeller: typeOfSeller; */
 
-  @ManyToOne(() => ethnicity, ethnicity => ethnicity.seller)
-  ethnicity: ethnicity;
+  /* @ManyToOne(() => ethnicity, ethnicity => ethnicity.seller)
+  ethnicity: ethnicity; */
 
   @ManyToOne(() => educationLevel, educationLevel => educationLevel.seller)
   educationLevel: educationLevel;
@@ -98,4 +99,7 @@ export class seller {
 
   @OneToMany(() => sellerEthnicity, sellerEthnicity => sellerEthnicity.seller)
   sellerEthnicity: sellerEthnicity[];
+
+  @OneToMany(() => sellerFamiliyNucleus, sellerFamiliyNucleus => sellerFamiliyNucleus.seller)
+  sellerFamiliyNucleus: sellerFamiliyNucleus[];
 }
