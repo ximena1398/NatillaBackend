@@ -15,7 +15,7 @@ import { municipalityModule } from './modules/municipality/municipality.module';
 import { departmentModule } from './modules/department/department.module';
 import { productModule } from './modules/product/product.module';
 import { sellerModule } from './modules/seller/seller.module';
-import { sellerProductsModule } from './modules/sellerProducts/sellerProducts.module';
+import { sellerEthnicityModule } from './modules/sellerEthnicity/sellerEthnicity.module';
 import { sellerDisabilitysModule } from './modules/sellerDisabilitys/sellerDisabilitys.module';
 import { serviceModule } from './modules/service/service.module';
 import { sisbenModule } from './modules/sisben/sisben.module';
@@ -54,9 +54,8 @@ import { internetModule } from './modules/internet/internet.module';
     departmentModule,
     productModule,
     sellerModule,
-    sellerProductsModule,
+    sellerEthnicityModule,
     sellerDisabilitysModule,
-    sellerProductsModule,
     serviceModule,
     sisbenModule,
     typeOfDwellingModule,

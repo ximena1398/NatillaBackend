@@ -13,7 +13,7 @@ import { educationLevel } from "./educationLevel.entity";
 import { typeOfDwelling } from "./typeOfDwelling.entity";
 import { sellerServices } from "./sellerServices.entity";
 import { sellerDisabilitys } from "./sellerDisabilitys.entity";
-import { sellerProducts } from "./sellerProducts.entity";
+import { sellerEthnicity } from "./sellerEthnicity.entity";
 import { internet } from "./internet.entity";
 const bcrypt = require('bcrypt');
 
@@ -96,6 +96,6 @@ export class seller {
   @OneToMany(() => sellerDisabilitys, sellerDisabilitys => sellerDisabilitys.seller)
   sellerDisabilitys: sellerDisabilitys[];
 
-  @OneToMany(() => sellerProducts, sellerProducts => sellerProducts.seller)
-  sellerProducts: sellerProducts[];
+  @OneToMany(() => sellerEthnicity, sellerEthnicity => sellerEthnicity.seller)
+  sellerEthnicity: sellerEthnicity[];
 }

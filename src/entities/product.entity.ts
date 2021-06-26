@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
-import { sellerProducts } from "./sellerProducts.entity";
+import { sellerEthnicity } from "./sellerEthnicity.entity";
 
 
 @Entity('product')
@@ -11,6 +11,6 @@ export class product {
   @Column('character varying', { unique: true })
   nombre: String;
 
-  @OneToMany(() => sellerProducts, sellerProducts => sellerProducts.product)
-  sellerProducts: sellerProducts[];
+  /* @OneToMany(() => sellerEthnicity, sellerEthnicity => sellerEthnicity.product)
+  sellerEthnicity: sellerEthnicity[]; */
 }

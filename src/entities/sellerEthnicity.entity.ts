@@ -1,9 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
 import { seller } from "./seller.entity";
-import { product } from "./product.entity";
+import { ethnicity } from "./ethnicity.entity";
 
-@Entity('sellerProducts')
-export class sellerProducts {
+@Entity('sellerEthnicity')
+export class sellerEthnicity {
   
   @PrimaryGeneratedColumn()
   id: Number;
@@ -11,9 +11,9 @@ export class sellerProducts {
   @Column('character varying', { unique: true })
   nombre: String;
 
-  @ManyToOne(() => product, product => product.sellerProducts)
-  product: product;
+  @ManyToOne(() => ethnicity, ethnicity => ethnicity.sellerEthnicity)
+  ethnicity: ethnicity;
 
-  @ManyToOne(() => seller, seller => seller.sellerProducts)
+  @ManyToOne(() => seller, seller => seller.sellerEthnicity)
   seller: seller;
 }

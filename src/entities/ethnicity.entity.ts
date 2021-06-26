@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
 import { seller } from "./seller.entity";
+import { sellerEthnicity } from "./sellerEthnicity.entity";
 
 @Entity('ethnicity')
 export class ethnicity {
@@ -12,4 +13,7 @@ export class ethnicity {
 
   @OneToMany(() => seller, seller => seller.ethnicity)
   seller: seller[];
+
+  @OneToMany(() => sellerEthnicity, sellerEthnicity => sellerEthnicity.ethnicity)
+  sellerEthnicity: sellerEthnicity[];
 }
