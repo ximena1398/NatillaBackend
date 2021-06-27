@@ -5,7 +5,7 @@ import { municipality } from "./municipality.entity";
 import { genre } from "./genre.entity";
 import { civilStatus } from "./civilStatus.entity";
 import { sisben } from "./sisben.entity";
-import { indigenousReservation } from "./indigenousReservation.entity";
+/* import { indigenousReservation } from "./indigenousReservation.entity"; */
 import { eps } from "./eps.entity";
 import { typeOfSeller } from "./typeOfSeller.entity";
 import { ethnicity } from "./ethnicity.entity";
