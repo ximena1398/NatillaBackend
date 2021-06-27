@@ -1,24 +1,24 @@
 import { Controller, Get, Post, Body, Put, Delete, Param, Req } from '@nestjs/common';
-import { FamiliyNucleusService } from './familyNucleus.service';
+import { familiyNucleusService } from './familyNucleus.service';
 
-@Controller('FamiliyNucleus')
-export class FamiliyNucleusController {
+@Controller('familiyNucleus')
+export class familiyNucleusController {
 
-    constructor(private readonly FamiliyNucleusService: FamiliyNucleusService) { }
+    constructor(private readonly familiyNucleusService: familiyNucleusService) { }
   
     @Get('/all')
   async getAll() {
-    return await this.FamiliyNucleusService.getAll()
+    return await this.familiyNucleusService.getAll()
   }
 
   @Get(':id')
   async getById(@Param('id') id: Number) {
-    return await this.FamiliyNucleusService.getById(id)
+    return await this.familiyNucleusService.getById(id)
   }
 
   @Post()
   async create(@Body() body) {
-    return await this.FamiliyNucleusService.create(body)
+    return await this.familiyNucleusService.create(body)
   }
 
   /* @Put('/:id')
@@ -28,6 +28,6 @@ export class FamiliyNucleusController {
 
   @Delete('/:id')
   async delete(@Param('id') id: number) {
-    return await this.FamiliyNucleusService.delete(id)
+    return await this.familiyNucleusService.delete(id)
   }
 }

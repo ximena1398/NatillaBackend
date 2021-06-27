@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { familiyNucleus } from '../../entities/familyNucleus.entity';
 import { Repository } from 'typeorm';
 @Injectable()
-export class FamiliyNucleusService {
+export class familiyNucleusService {
     
   constructor(
     @InjectRepository(familiyNucleus) private readonly familiyNucleusRepository: Repository<familiyNucleus>

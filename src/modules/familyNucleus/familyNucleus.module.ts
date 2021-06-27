@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { FamiliyNucleusController } from './familyNucleus.controller';
-import { FamiliyNucleusService } from './familyNucleus.service';
+import { familiyNucleusController } from './familyNucleus.controller';
+import { familiyNucleusService } from './familyNucleus.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { familiyNucleus } from '../../entities/familyNucleus.entity';
 
@@ -8,7 +8,7 @@ import { familiyNucleus } from '../../entities/familyNucleus.entity';
   imports:[
     TypeOrmModule.forFeature([familiyNucleus])
   ],
-  controllers: [FamiliyNucleusController],
-  providers: [FamiliyNucleusService]
+  controllers: [familiyNucleusController],
+  providers: [familiyNucleusService]
 })
 export class FamiliyNucleusModule {}
