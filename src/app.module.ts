@@ -10,7 +10,7 @@ import { epsModule } from './modules/eps/eps.module';
 import { ethnicityModule } from './modules/ethnicity/ethnicity.module';
 import { genreModule } from './modules/genre/genre.module';
 import { idTypeModule } from './modules/idType/idType.module';
-import { indigenousReservationModule } from './modules/indigenousReservation/indigenousReservation.module';
+/* import { indigenousReservationModule } from './modules/indigenousReservation/indigenousReservation.module'; */
 import { municipalityModule } from './modules/municipality/municipality.module';
 import { departmentModule } from './modules/department/department.module';
 import { productModule } from './modules/product/product.module';
@@ -51,7 +51,7 @@ import { FamiliyNucleusModule } from './modules/familyNucleus/familyNucleus.modu
     ethnicityModule,
     genreModule,
     idTypeModule,
-    indigenousReservationModule,
+/*     indigenousReservationModule, */
     municipalityModule,
     departmentModule,
     productModule,

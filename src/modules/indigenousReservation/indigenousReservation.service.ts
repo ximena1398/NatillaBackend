@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+/* import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { indigenousReservation } from 'src/entities/indigenousReservation.entity';
 import { Repository } from 'typeorm';
@@ -21,11 +21,7 @@ export class indigenousReservationService {
     return await this.indigenousReservationRepository.save(body)
   }
 
-  /* async update(id: Number) {
-    return "actualizado correctamente " + id
-  } */
-
   async delete(id: number) {
     return await this.indigenousReservationRepository.delete(id)
   }
-}
+} */

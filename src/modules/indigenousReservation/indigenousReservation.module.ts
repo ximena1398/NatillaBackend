@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+/* import { Module } from '@nestjs/common';
 import { indigenousReservationController } from './indigenousReservation.controller';
 import { indigenousReservationService } from './indigenousReservation.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -11,4 +11,4 @@ import { indigenousReservation } from '../../entities/indigenousReservation.enti
   controllers: [indigenousReservationController],
   providers: [indigenousReservationService]
 })
-export class indigenousReservationModule {}
+export class indigenousReservationModule {} */

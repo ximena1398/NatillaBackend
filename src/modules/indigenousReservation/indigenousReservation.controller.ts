@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Put, Delete, Param, Req } from '@nestjs/common';
+/* import { Controller, Get, Post, Body, Put, Delete, Param, Req } from '@nestjs/common';
 import { indigenousReservationService } from './indigenousReservation.service';
 
 @Controller('indigenousReservation')
@@ -21,13 +21,9 @@ export class indigenousReservationController {
     return await this.indigenousReservationService.create(body)
   }
 
-  /* @Put('/:id')
-  async update(@Param('id') id: Number) {
-    return await this.indigenousReservationService.update(id)
-  } */
 
   @Delete('/:id')
   async delete(@Param('id') id: number) {
     return await this.indigenousReservationService.delete(id)
   }
-}
+} */
