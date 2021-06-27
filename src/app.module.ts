@@ -26,6 +26,7 @@ import { sisbenLetterModule } from './modules/sisbenLetter/sisbenLetter.module';
 import { sisbenNumberModule } from './modules/sisbenNumber/sisbenNumber.module';
 import { internetModule } from './modules/internet/internet.module';
 import { sellerFamiliyNucleusModule } from './modules/sellerFamilyNucleus/sellerFamilyNucleus.module';
+import { FamiliyNucleusModule } from './modules/familyNucleus/familyNucleus.module';
 
 
 
@@ -66,7 +67,8 @@ import { sellerFamiliyNucleusModule } from './modules/sellerFamilyNucleus/seller
     sisbenLetterModule,
     sisbenNumberModule,
     internetModule,
-    sellerFamiliyNucleusModule
+    sellerFamiliyNucleusModule,
+    FamiliyNucleusModule
   ],
   controllers: [AppController],
   providers: [AppService],
