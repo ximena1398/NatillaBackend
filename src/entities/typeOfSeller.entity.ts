@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
+/* import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
 import { seller } from "./seller.entity";
 
 @Entity('typeOfSeller')
@@ -12,4 +12,4 @@ export class typeOfSeller {
 
   @OneToMany(() => seller, seller => seller.typeOfSeller)
   seller: seller[];
-}
+} */

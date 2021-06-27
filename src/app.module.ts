@@ -20,7 +20,7 @@ import { sellerDisabilitysModule } from './modules/sellerDisabilitys/sellerDisab
 import { serviceModule } from './modules/service/service.module';
 import { sisbenModule } from './modules/sisben/sisben.module';
 import { typeOfDwellingModule } from './modules/typeOfDwelling/typeOfDwelling.module';
-import { typeOfSellerModule } from './modules/typeOfSeller/typeOfSeller.module';
+/* import { typeOfSellerModule } from './modules/typeOfSeller/typeOfSeller.module'; */
 import { userModule } from './modules/user/user.module';
 import { sisbenLetterModule } from './modules/sisbenLetter/sisbenLetter.module';
 import { sisbenNumberModule } from './modules/sisbenNumber/sisbenNumber.module';
@@ -61,7 +61,7 @@ import { FamiliyNucleusModule } from './modules/familyNucleus/familyNucleus.modu
     serviceModule,
     sisbenModule,
     typeOfDwellingModule,
-    typeOfSellerModule,
+/*     typeOfSellerModule, */
     userModule,
     AuthModule,
     sisbenLetterModule,

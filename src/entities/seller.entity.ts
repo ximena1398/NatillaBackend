@@ -7,8 +7,8 @@ import { civilStatus } from "./civilStatus.entity";
 import { sisben } from "./sisben.entity";
 /* import { indigenousReservation } from "./indigenousReservation.entity"; */
 import { eps } from "./eps.entity";
-import { typeOfSeller } from "./typeOfSeller.entity";
-import { ethnicity } from "./ethnicity.entity";
+/* import { typeOfSeller } from "./typeOfSeller.entity";
+import { ethnicity } from "./ethnicity.entity"; */
 import { educationLevel } from "./educationLevel.entity";
 import { typeOfDwelling } from "./typeOfDwelling.entity";
 import { sellerServices } from "./sellerServices.entity";

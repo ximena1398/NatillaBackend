@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+/* import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { typeOfSeller } from 'src/entities/typeOfSeller.entity';
 import { Repository } from 'typeorm';
@@ -21,11 +21,8 @@ export class typeOfSellerService {
     return await this.typeOfSellerRepository.save(body)
   }
 
-  /* async update(id: Number) {
-    return "actualizado correctamente " + id
-  } */
-
   async delete(id: number) {
     return await this.typeOfSellerRepository.delete(id)
   }
 }
+ */

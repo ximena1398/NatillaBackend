@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+/* import { Module } from '@nestjs/common';
 import { typeOfSellerController } from './typeOfSeller.controller';
 import { typeOfSellerService } from './typeOfSeller.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -11,4 +11,4 @@ import { typeOfSeller } from '../../entities/typeOfSeller.entity';
   controllers: [typeOfSellerController],
   providers: [typeOfSellerService]
 })
-export class typeOfSellerModule {}
+export class typeOfSellerModule {} */
