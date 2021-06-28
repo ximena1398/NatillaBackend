@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
-import { sellerFamiliyNucleusController } from './sellerFamilyNucleus.controller';
-import { sellerFamiliyNucleusService } from './sellerFamilyNucleus.service';
+import { sellerFamilyNucleusController } from './sellerFamilyNucleus.controller';
+import { sellerFamilyNucleusService } from './sellerFamilyNucleus.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { sellerFamiliyNucleus } from '../../entities/sellerFamilyNucleus.entity';
+import { sellerFamilyNucleus } from '../../entities/sellerFamilyNucleus.entity';
 
 @Module({
   imports:[
-    TypeOrmModule.forFeature([sellerFamiliyNucleus])
+    TypeOrmModule.forFeature([sellerFamilyNucleus])
   ],
-  controllers: [sellerFamiliyNucleusController],
-  providers: [sellerFamiliyNucleusService]
+  controllers: [sellerFamilyNucleusController],
+  providers: [sellerFamilyNucleusService]
 })
-export class sellerFamiliyNucleusModule {}
+export class sellerFamilyNucleusModule {}

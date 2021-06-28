@@ -1,9 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
 import { seller } from "./seller.entity";
-import { sellerFamiliyNucleus } from "./sellerFamilyNucleus.entity";
+import { sellerFamilyNucleus } from "./sellerFamilyNucleus.entity";
 
-@Entity('familiyNucleus')
-export class familiyNucleus {
+@Entity('familyNucleus')
+export class familyNucleus {
   
   @PrimaryGeneratedColumn()
   id: Number;
@@ -11,9 +11,9 @@ export class familiyNucleus {
   @Column('character varying', { unique: true })
   nombre: String;
 
-  /* @OneToMany(() => seller, seller => seller.familiyNucleus)
+  /* @OneToMany(() => seller, seller => seller.familyNucleus)
   seller: seller[]; */
 
-  @OneToMany(() => sellerFamiliyNucleus, sellerfamiliyNucleus => sellerfamiliyNucleus.familiyNucleus)
-  sellerFamiliyNucleus: sellerFamiliyNucleus[];
+  @OneToMany(() => sellerFamilyNucleus, sellerfamilyNucleus => sellerfamilyNucleus.familyNucleus)
+  sellerFamilyNucleus: sellerFamilyNucleus[];
 }

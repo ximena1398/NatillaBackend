@@ -1,24 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { sellerFamiliyNucleus } from 'src/entities/sellerFamilyNucleus.entity';
+import { sellerFamilyNucleus } from 'src/entities/sellerFamilyNucleus.entity';
 import { Repository } from 'typeorm';
 @Injectable()
-export class sellerFamiliyNucleusService {
+export class sellerFamilyNucleusService {
     
   constructor(
-    @InjectRepository(sellerFamiliyNucleus) private readonly sellerFamiliyNucleusRepository: Repository<sellerFamiliyNucleus>
+    @InjectRepository(sellerFamilyNucleus) private readonly sellerFamilyNucleusRepository: Repository<sellerFamilyNucleus>
   ) { }
 
   async getAll() {
-    return await this.sellerFamiliyNucleusRepository.find()
+    return await this.sellerFamilyNucleusRepository.find()
   }
 
   async getById(id) {
-    return await this.sellerFamiliyNucleusRepository.findOne(id)
+    return await this.sellerFamilyNucleusRepository.findOne(id)
   }
 
   async create(body) {
-    return await this.sellerFamiliyNucleusRepository.save(body)
+    return await this.sellerFamilyNucleusRepository.save(body)
   }
 
   /* async update(id: Number) {
@@ -26,6 +26,6 @@ export class sellerFamiliyNucleusService {
   } */
 
   async delete(id: number) {
-    return await this.sellerFamiliyNucleusRepository.delete(id)
+    return await this.sellerFamilyNucleusRepository.delete(id)
   }
 }

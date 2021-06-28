@@ -25,8 +25,8 @@ import { userModule } from './modules/user/user.module';
 import { sisbenLetterModule } from './modules/sisbenLetter/sisbenLetter.module';
 import { sisbenNumberModule } from './modules/sisbenNumber/sisbenNumber.module';
 import { internetModule } from './modules/internet/internet.module';
-import { sellerFamiliyNucleusModule } from './modules/sellerFamilyNucleus/sellerFamilyNucleus.module';
-import { FamiliyNucleusModule } from './modules/familyNucleus/familyNucleus.module';
+import { sellerFamilyNucleusModule } from './modules/sellerFamilyNucleus/sellerFamilyNucleus.module';
+import { FamilyNucleusModule } from './modules/familyNucleus/familyNucleus.module';
 
 
 
@@ -67,8 +67,8 @@ import { FamiliyNucleusModule } from './modules/familyNucleus/familyNucleus.modu
     sisbenLetterModule,
     sisbenNumberModule,
     internetModule,
-    sellerFamiliyNucleusModule,
-    FamiliyNucleusModule
+    sellerFamilyNucleusModule,
+    FamilyNucleusModule
   ],
   controllers: [AppController],
   providers: [AppService],

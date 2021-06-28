@@ -1,33 +1,33 @@
 import { Controller, Get, Post, Body, Put, Delete, Param, Req } from '@nestjs/common';
-import { sellerFamiliyNucleusService } from './sellerFamilyNucleus.service';
+import { sellerFamilyNucleusService } from './sellerFamilyNucleus.service';
 
-@Controller('sellerFamiliyNucleus')
-export class sellerFamiliyNucleusController {
+@Controller('sellerFamilyNucleus')
+export class sellerFamilyNucleusController {
 
-    constructor(private readonly sellerFamiliyNucleusService: sellerFamiliyNucleusService) { }
+    constructor(private readonly sellerFamilyNucleusService: sellerFamilyNucleusService) { }
   
     @Get('/all')
   async getAll() {
-    return await this.sellerFamiliyNucleusService.getAll()
+    return await this.sellerFamilyNucleusService.getAll()
   }
 
   @Get(':id')
   async getById(@Param('id') id: Number) {
-    return await this.sellerFamiliyNucleusService.getById(id)
+    return await this.sellerFamilyNucleusService.getById(id)
   }
 
   @Post()
   async create(@Body() body) {
-    return await this.sellerFamiliyNucleusService.create(body)
+    return await this.sellerFamilyNucleusService.create(body)
   }
 
   /* @Put('/:id')
   async update(@Param('id') id: Number) {
-    return await this.sellerFamiliyNucleusService.update(id)
+    return await this.sellerFamilyNucleusService.update(id)
   } */
 
   @Delete('/:id')
   async delete(@Param('id') id: number) {
-    return await this.sellerFamiliyNucleusService.delete(id)
+    return await this.sellerFamilyNucleusService.delete(id)
   }
 }

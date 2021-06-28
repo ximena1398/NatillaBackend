@@ -1,24 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { familiyNucleus } from '../../entities/familyNucleus.entity';
+import { familyNucleus } from '../../entities/familyNucleus.entity';
 import { Repository } from 'typeorm';
 @Injectable()
-export class familiyNucleusService {
+export class familyNucleusService {
     
   constructor(
-    @InjectRepository(familiyNucleus) private readonly familiyNucleusRepository: Repository<familiyNucleus>
+    @InjectRepository(familyNucleus) private readonly familyNucleusRepository: Repository<familyNucleus>
   ) { }
 
   async getAll() {
-    return await this.familiyNucleusRepository.find()
+    return await this.familyNucleusRepository.find()
   }
 
   async getById(id) {
-    return await this.familiyNucleusRepository.findOne(id)
+    return await this.familyNucleusRepository.findOne(id)
   }
 
   async create(body) {
-    return await this.familiyNucleusRepository.save(body)
+    return await this.familyNucleusRepository.save(body)
   }
 
   /* async update(id: Number) {
@@ -26,6 +26,6 @@ export class familiyNucleusService {
   } */
 
   async delete(id: number) {
-    return await this.familiyNucleusRepository.delete(id)
+    return await this.familyNucleusRepository.delete(id)
   }
 }

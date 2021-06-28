@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
-import { familiyNucleusController } from './familyNucleus.controller';
-import { familiyNucleusService } from './familyNucleus.service';
+import { familyNucleusController } from './familyNucleus.controller';
+import { familyNucleusService } from './familyNucleus.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { familiyNucleus } from '../../entities/familyNucleus.entity';
+import { familyNucleus } from '../../entities/familyNucleus.entity';
 
 @Module({
   imports:[
-    TypeOrmModule.forFeature([familiyNucleus])
+    TypeOrmModule.forFeature([familyNucleus])
   ],
-  controllers: [familiyNucleusController],
-  providers: [familiyNucleusService]
+  controllers: [familyNucleusController],
+  providers: [familyNucleusService]
 })
-export class FamiliyNucleusModule {}
+export class FamilyNucleusModule {}
