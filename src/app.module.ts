@@ -1,76 +1,39 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './modules/auth/auth.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { civilStatusModule } from './modules/civilStatus/civilStatus.module';
-import { disabilityModule } from './modules/disability/disability.module';
-import { educationLevelModule } from './modules/educationLevel/educationLevel.module';
-import { epsModule } from './modules/eps/eps.module';
-import { ethnicityModule } from './modules/ethnicity/ethnicity.module';
-import { genreModule } from './modules/genre/genre.module';
-import { idTypeModule } from './modules/idType/idType.module';
-/* import { indigenousReservationModule } from './modules/indigenousReservation/indigenousReservation.module'; */
-import { municipalityModule } from './modules/municipality/municipality.module';
-import { departmentModule } from './modules/department/department.module';
-import { productModule } from './modules/product/product.module';
-import { sellerModule } from './modules/seller/seller.module';
-import { sellerEthnicityModule } from './modules/sellerEthnicity/sellerEthnicity.module';
-import { sellerDisabilitysModule } from './modules/sellerDisabilitys/sellerDisabilitys.module';
-import { serviceModule } from './modules/service/service.module';
-import { sisbenModule } from './modules/sisben/sisben.module';
-import { typeOfDwellingModule } from './modules/typeOfDwelling/typeOfDwelling.module';
-/* import { typeOfSellerModule } from './modules/typeOfSeller/typeOfSeller.module'; */
-import { userModule } from './modules/user/user.module';
-import { sisbenLetterModule } from './modules/sisbenLetter/sisbenLetter.module';
-import { sisbenNumberModule } from './modules/sisbenNumber/sisbenNumber.module';
-import { internetModule } from './modules/internet/internet.module';
-import { sellerFamilyNucleusModule } from './modules/sellerFamilyNucleus/sellerFamilyNucleus.module';
-import { FamilyNucleusModule } from './modules/familyNucleus/familyNucleus.module';
-
-
+import { CampañaModule } from './modules/Campaña/Campaña.module';
+import { CampañaProductoModule } from './modules/CampañaProducto/CampañaProducto.module';
+import { ClienteModule } from './modules/Cliente/Cliente.module';
+import { EstadoProductoModule } from './modules/EstadoProducto/EstadoProducto.module';
+import { ProductoModule } from './modules/Producto/Producto.module';
+import { VentaModule } from './modules/Venta/Venta.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       name: "default",
       type: 'postgres',
-      host: 'ec2-54-224-194-214.compute-1.amazonaws.com',
+      host: 'ec2-34-193-101-0.compute-1.amazonaws.com',
       port: 5432,
-      username: 'hnmavabvuzeoqm',
-      password: 'f802cf828786b1f2de5e03ff521761a4a844652c1191807000ceb074d67616ee',
-      database: 'd2ubjfcsovi3pl',
+      username: 'znyuowepshjrdu',
+      password: '682a82458336627ca8e64f8a114d79650d758472903ed99acde25080188b9938',
+      database: 'd867mgbiorjakt',
       entities: ['dist/entities/*.entity.js'],
       synchronize: true,
       ssl: { rejectUnauthorized: false }
     }),
-    civilStatusModule,
-    disabilityModule,
-    educationLevelModule,
-    epsModule,
-    ethnicityModule,
-    genreModule,
-    idTypeModule,
-/*     indigenousReservationModule, */
-    municipalityModule,
-    departmentModule,
-    productModule,
-    sellerModule,
-    sellerEthnicityModule,
-    sellerDisabilitysModule,
-    serviceModule,
-    sisbenModule,
-    typeOfDwellingModule,
-/*     typeOfSellerModule, */
-    userModule,
-    AuthModule,
-    sisbenLetterModule,
-    sisbenNumberModule,
-    internetModule,
-    sellerFamilyNucleusModule,
-    FamilyNucleusModule
+    
+    ClienteModule,
+    EstadoProductoModule,
+    ProductoModule,
+    VentaModule,
+    CampañaModule,
+    CampañaProductoModule
   ],
+
   controllers: [AppController],
   providers: [AppService],
 })
+
 export class AppModule { }
