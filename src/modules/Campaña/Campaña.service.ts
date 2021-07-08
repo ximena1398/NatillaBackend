@@ -4,13 +4,14 @@ import { Campaña } from 'src/entities/Campaña.entity';
 import { Repository } from 'typeorm';
 @Injectable()
 export class CampañaService {
-    
+
   constructor(
     @InjectRepository(Campaña) private readonly CampañaRepository: Repository<Campaña>
   ) { }
 
   async getAll() {
-    return await this.CampañaRepository.find()
+    return await this.CampañaRepository.createQueryBuilder("Campaña")
+      .getManyAndCount();
   }
 
   async getById(id) {
